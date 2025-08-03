@@ -27,6 +27,15 @@ void question326() {
   ASS("long fun_a(unsigned long x) { long val = 0; while (x) { val ^= x; x >>= "
       "1; } return val &= 1; }");
 }
+
+void question327() {
+  ASS("long fact_for(long n) { long i; long result = 1; for (i = 2; i <= n; "
+      "i++) result *= i; return result; }");
+  ASS("long fact_for_gd_goto(long n) { long i = 2; long result = 1; if (n <= "
+      "1) goto done; loop: result *= i; i++; if (i <= n) goto loop; done: "
+      "return result; }");
+}
+
 int main() {
   RUN(question320);
   RUN(question321);
@@ -34,4 +43,5 @@ int main() {
   RUN(question324);
   RUN(question325);
   RUN(question326);
+  RUN(question327);
 }

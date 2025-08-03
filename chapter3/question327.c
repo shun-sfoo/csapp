@@ -1,7 +1,15 @@
-long fact_for(long n) {
-  long i;
+long fact_for_gd_goto(long n) {
+  long i = 2;
   long result = 1;
-  for (i = 2; i <= n; i++)
-    result *= i;
+  if (n <= 1)
+    goto done;
+
+loop:
+  result *= i;
+  i++;
+  if (i <= n)
+    goto loop;
+
+done:
   return result;
 }
